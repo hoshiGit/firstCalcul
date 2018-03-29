@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+ <!--MONACA用読み込みファイル
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+ -->
+    <script src="js/keicom.js"> </script>
+    <script src="js/1keisan.js"> </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./iziToast/iziToast.min.css">
+    <script type="text/javascript" src="./iziToast/iziToast.min.js"></script>
+    <script type="text/javascript" src="./js/iziToastsetting.js"></script>
+    <title>フラッシュ</title>
+    <script>
+    
+    var i;
+    var shutsudai = new Array();
+
+    returnQselect=init(); //問題の種類抽出
+    switch(returnQselect[1][2]){　//はやさから遅延数字生成
+        case "おそい":
+            timeTimer =　2000;
+        break;
+        case "ふつう":
+            timeTimer =　1000;
+        break;
+        case "はやい":
+            timeTimer =　500;
+        break;
+        case "すごくはやい":
+            timeTimer =　300;
+        break;
+    }
+    console.log("問題の種類"+returnQselect[1][1]);
+
+    shutsudai=questionSellect(returnQselect);//問題配列生成(シャッフル前)
+    
+    var shutsudaiShuffle=shuffleArray(shutsudai);//問題配列生成(シャッフル後)
+    console.log(shutsudaiShuffle);
+    var num=shutsudaiShuffle[0].length-1;//問題数抽出
+    var answer;
+
+
+    document.addEventListener('DOMContentLoaded', function(){//ページ表示後の初期設定
+        document.getElementById('spanIdTimer').textContent = returnQselect[1][2];//はやさを表示
+        document.getElementById('spanIdNokori').textContent = num; //問題数を表示
+
+    })
+
+
+    </script>
+
+</head>
+
+<body>
+    <form name="formNameStart">
+        はやさ：<span id="spanIdTimer"></span>
+        <input type="button" id="inputIdStart" value="スタート" onclick="flashKeisan(timeTimer,shutsudaiShuffle)" style="font-size:15px;">
+
+    </form>
+    <div id="divIdMondai"><span id="spainIdMondai">もんだい = </span><span id="spainIdKotae">こたえ</span></div>
+    <div id="divIdNokori"> のこり: <span id="spanIdNokori"></span> もん</div>
+    <form name="formNameYame">
+        <input type="checkbox" name="inputNameCheck">
+        <input type="button" id="inputIdYame" value="けいさんをやめる" onclick="jump0_nt()" style="font-size:25px;">
+    </form>
+
+</body>
+</html>

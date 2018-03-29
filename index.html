@@ -1,0 +1,77 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--  MONACA用読み込みファイル
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>トップページ</title>
+  <!-- 小学校1年生向け、足し算と引き算-->
+
+</head>
+
+<body>
+    <div style="font-size:25px;">    けいさん </div>
+    <div id="keiVer">
+        Ver.2.0
+    </div>
+    <br>
+ 
+    
+    <form name="formNameButton" action="button.html" method="get">
+        <h3>ボタン入力</h3>
+    
+        <div class="leftDiv">
+           くりあがり/くりさがり<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="なし"> なし<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="あり"> あり<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="りょうほう" checked> りょうほう<br>
+        </div>
+
+        <div class="rightDiv">
+            <br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="たしざん"> たしざん<br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="ひきざん"> ひきざん<br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="ミックス" checked> ミックス<br>
+
+        </div>
+        <div class="blockDiv">
+            <input type="submit" value="はじめる">
+        </div>
+    </form>
+
+    <form name="formNameFlash" action="flush.html" method="get">
+        <h3>フラッシュひょうじ</h3>
+    
+        <div class="leftDiv">
+            くりあがり/くりさがり<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="なし"> なし<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="あり"> あり<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="q1" value="りょうほう" checked> りょうほう<br>
+        </div>
+
+        <div class="rightDiv">
+            <br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="たしざん"> たしざん<br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="ひきざん"> ひきざん<br>
+            &nbsp;&nbsp;<input type="radio" name="q2" value="ミックス" checked> ミックス<br>
+
+        </div>
+        <div class="blockDiv">
+            はやさ<br>
+            &nbsp;&nbsp;<input type="radio" name="timer" value="おそい">おそい<br>
+            &nbsp;&nbsp;<input type="radio" name="timer" value="ふつう" checked>ふつう<br>
+            &nbsp;&nbsp;<input type="radio" name="timer" value="はやい">はやい<br>
+            &nbsp;&nbsp;<input type="radio" name="timer" value="すごくはやい">すごくはやい<br>
+            <input type="submit" value="はじめる">
+        </div>
+    </form>
+
+
+</body>
+</html>
+

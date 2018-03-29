@@ -1,0 +1,46 @@
+
+
+/**/
+.leftDiv{float: left; }
+.rightDiv{float: left;}
+.blockDiv{clear: both;}
+
+#naitashiB { font-size:20px; position: relative; top: 30px;}
+#naihikiB { font-size:20px; position: relative; top: 50px;}
+#aritashiB { font-size:20px; position: relative; top: 70px;}
+#arihikiB { font-size:20px; position: relative; top: 90px;}
+
+input[type="number"] {text-align: center; width: 150px}
+input[type="checkbox"] { transform: scale(1.5); }
+
+#inbox_nt { margin-left: auto; margin-right: auto;}
+#backQ_nt{ font-size:25;}
+#nokori_nt{ height: 30px;}
+
+#hikiQ_nt { font-size:50px;}
+#hikiA_nt { font-size:50px;}
+
+#tashiQ_nh,#tashiQ_nt,#spainIdMondai,#spainIdKotae { font-size:50px; height: 300px;}
+#tashiA_nh,#tashiA_nt,#inputIdKotae { font-size:50px; height: 50px; width: 200px;}
+
+#inbox_nh { margin-left: auto; margin-right: auto;}
+#backQ_nh { font-size:25;}
+#nokori_nh { height: 30px;}
+
+#hikiQ_nh { font-size:50px;}
+#hikiA_nh { font-size:50px;}
+
+.toast{
+    position: fixed;
+    bottom: 30px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 15px;
+    padding: 8px 15px;
+    border: none;
+    z-index: 1000;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+.dumy{display: none;}

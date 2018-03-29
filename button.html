@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+ <!--MONACA用読み込みファイル
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+ -->
+    <script src="js/keicom.js"> </script>
+    <script src="js/1keisan.js"> </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="./iziToast/iziToast.min.css">
+    <script type="text/javascript" src="./iziToast/iziToast.min.js"></script>
+    <script type="text/javascript" src="./js/iziToastsetting.js"></script>
+    <title>もんだい</title>
+    <script>
+    
+    var i;
+    var shutsudai = new Array();
+    returnQselect=init(); //問題の種類抽出
+    console.log("問題の種類"+returnQselect[1][1]);
+    
+    shutsudai=questionSellect(returnQselect);//問題配列生成(シャッフル前)
+    
+    var shutsudaiShuffle=shuffleArray(shutsudai);//問題配列生成(シャッフル後)
+    console.log(shutsudaiShuffle);
+    var num=shutsudaiShuffle[0].length-1;
+    var miss=0;
+
+    
+    document.addEventListener('DOMContentLoaded', function(){////ページ表示後の初期設定
+//1問目を表示
+        document.getElementById('spanIdNokori').textContent = num;
+        a=shutsudaiShuffle[0][0];
+        b=shutsudaiShuffle[1][0];
+        c=shutsudaiShuffle[2][0];
+        i=1;
+        num--;
+
+        ope = opeSelect(c);
+
+        document.getElementById('spainIdMondai').textContent = a+ope+b+"=";
+        document.getElementById('inputIdKotae').click();
+        startTimer = new Date();
+        nowTimer = setInterval("elapsedTime(startTimer)",1000);  
+        
+    })
+    
+    
+</script>
+    
+    
+    
+    
+</head>
+<body>
+
+    <div id="divIdMondai">もんだい:<span id="spainIdMondai"></span></div>
+    <br>
+    <form name="formNameKotae">
+    <div id="divIdKotae">
+    <input type="number" name="inputNameKotae" id="inputIdKotae" maxlength="2" pattern="[0-9]" autofocus onkeypress="inputCheck(event.keyCode);" >
+    <input type="number" name="dumyNameKotae" id="dumyIdKotae" class="dumy">
+
+    <input type="button" id="buttonIdOk" value="OK" onclick="keisan()" style="font-size:50px;">
+    </div>
+    </form>
+    <br>
+    <div id="divIdNokori"> のこり: <span id="spanIdNokori"></span> もん</div>
+    
+    じかん：<span id="spanIdTimer" size="28"></span>
+    <br>
+    <form name="formNameYame">
+        <input type="checkbox" name="inputNameCheck">
+        <input type="button" id="inputIdYame" value="けいさんをやめる" onclick="jump0_nt()" style="font-size:25px;">
+    </form>
+
+</body>
+</html>
